@@ -8,9 +8,9 @@
 //(https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashFuncExamp.html)
 int sascii(std::string x) {
    char ch[x.length()];
-   // ch = x.toCharArray();
-   // int xlength = x.length();
-
+   for (int i = 0; i < x.length(); i++){
+      ch[i] = x[i];
+   }
    int i, sum;
    for (sum=0, i=0; i < x.length(); i++)
       sum += ch[i];
