@@ -1,17 +1,24 @@
-  #include <iostream>
-  #include "Person.h"
+// Person.cpp
 
-  Person::Person(std::string first, std::string last, int num){
+#include <iostream>
+#include "Person.h"
+
+Person::Person(){
+    this->first= nullptr;
+    this->last = nullptr;
+    this->idnum = 0;
+}
+
+Person::Person(std::string first, std::string last, int num){
     this->first = first;
     this->last = last;
     this->idnum = num;
-  }
+}
 
-  std::string Person::get_name(){
+std::string Person::get_name(){
     return last+", "+first;
-  }
+}
 
-  int Person::get_id(){
+int Person::get_id(){
     return idnum;
-
-  }
+}

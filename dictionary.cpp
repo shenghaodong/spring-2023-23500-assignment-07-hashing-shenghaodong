@@ -1,37 +1,44 @@
-#pragma once
 #include <iostream>
-#include <Person.h>
+#include "Person.h"
+#include "dictionary.h"
+#include "lists.h"
 
-class dictonary{
-    private:
-        std::string first; // first name
-        std::string last; // last name
-        int idnum; // some id number
+dictionary::dictionary(){
+   std::cout << "DO NOTHING FOR NOW" << std::endl;
+}
 
-    public:
-        Person(std::string first, std::string last, int num);
-        std::string get_name();
-        int get_id();
-};
+dictionary::~dictionary(){
+  //Loop through the table and delete everything
+  for(int i = 0; i < 10; i++){
+   hashTable[i].~List();
+  }
+  free(hashTable);
 
-/*
-You can modify the class if you'd like.
+}
 
-Your hash function should combine the first and last names into a
-single string and then calculate the hash value. You can use a simple
-hash function like from the resource site listed above.
+void insert(Person newPerson){
+   //Insert New Person
+}
 
-Your *Dictionary* should support the following features:
+Person retrieve(std::string firstName, std::string lastName){
+   Person hello = new* Person();
+   return hello;
 
-1. One or more constructors
-2. A destructor that frees all the linked lists
-3. A method to insert a new Person.
-4. A method to retrieve a Person (return nullptr if they're not in the
-   Dictionary).
-5. A Method to get all the keys - that is, all the first+last names.
+}
 
-   
-* Important notes
-1. As indiciated above, you should test your project using doctest
-2. Make sure to use exceptions as we discussed in class to handle error conditions.
-*/
+std::string getAllKeys(){
+
+}
+
+//Hash Function taken from the link provided in the readme 
+//(https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashFuncExamp.html)
+int sascii(std::string x, int m) {
+   char ch[x.length()];
+   // ch = x.toCharArray();
+   // int xlength = x.length();
+
+   int i, sum;
+   for (sum=0, i=0; i < x.length(); i++)
+      sum += ch[i];
+   return sum % m;
+}

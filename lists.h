@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-#include "Node.h"
+#include "node.h"
+#include "Person.h"
 
 class List{
  private:
@@ -8,10 +9,5 @@ class List{
  public:
   List();
   ~List();
-  void insert(std::string data);
-  void insert(int loc, std::string data); //0 indexed
-  int length();
-  std::string find(std::string data);
-  std::string toString(); // for testing purposes
-  void remove(int loc);
+  void insert(Person data);
 };
