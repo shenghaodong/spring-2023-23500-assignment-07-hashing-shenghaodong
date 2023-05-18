@@ -27,3 +27,27 @@ void List::insert(Person data){
   tmp->setNext(head);
   head = tmp;
 }
+
+std::string List::getKeys(){
+  Node *walker = head;
+  std::string returnVal = "";
+  while(walker != nullptr){
+    returnVal += "(";
+    returnVal += walker -> getData().get_name();
+    returnVal += "), ";
+    walker = walker -> getNext();
+  }
+  return returnVal;
+}
+
+Person List::getPerson(std::string name){
+  Node *walker = head;
+  while(walker != nullptr){
+    if(walker -> getData().get_name() == name){
+      return walker -> getData();
+    }
+    walker = walker -> getNext();
+  }
+  Person empty;
+  return empty;
+}

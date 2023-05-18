@@ -4,8 +4,8 @@
 #include "Person.h"
 
 Person::Person(){
-    this->first= nullptr;
-    this->last = nullptr;
+    this->first= "";
+    this->last = "";
     this->idnum = 0;
 }
 

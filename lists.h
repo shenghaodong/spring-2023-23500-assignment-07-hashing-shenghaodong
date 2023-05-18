@@ -10,4 +10,6 @@ class List{
   List();
   ~List();
   void insert(Person data);
+  std::string getKeys();
+  Person getPerson(std::string name);
 };
